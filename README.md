@@ -65,90 +65,90 @@ Players compete in teams, decode clues, and avoid the assassin — all synchroni
 
 ---
 
-# 📂 Project Structure
+# 📂 SpyWords — Project Structure
 
+## Monorepo Layout
+
+```text
 spywords/
-│
 ├── README.md
 ├── docker-compose.yml
 ├── .env.example
-├── package.json # Root workspace config
+├── package.json                 # Root workspace config
 │
-├── apps/ # Frontend apps
-│ └── web/
-│ ├── app/ # Next.js App Router
-│ │ ├── page.tsx
-│ │ ├── lobby/
-│ │ ├── room/[id]/
-│ │ └── game/[id]/
-│ │
-│ ├── components/
-│ │ ├── GameGrid.tsx
-│ │ ├── WordCard.tsx
-│ │ ├── CluePanel.tsx
-│ │ ├── TeamSidebar.tsx
-│ │ └── Timer.tsx
-│ │
-│ ├── socket/
-│ │ └── client.ts
-│ │
-│ ├── store/
-│ │ └── gameStore.ts
-│ │
-│ └── styles/
+├── apps/                        # Frontend apps
+│   └── web/
+│       ├── app/                 # Next.js App Router
+│       │   ├── page.tsx
+│       │   ├── lobby/
+│       │   ├── room/[id]/
+│       │   └── game/[id]/
+│       │
+│       ├── components/
+│       │   ├── GameGrid.tsx
+│       │   ├── WordCard.tsx
+│       │   ├── CluePanel.tsx
+│       │   ├── TeamSidebar.tsx
+│       │   └── Timer.tsx
+│       │
+│       ├── socket/
+│       │   └── client.ts
+│       │
+│       ├── store/
+│       │   └── gameStore.ts
+│       │
+│       └── styles/
 │
-│
-├── services/ # Backend microservices
-│
-│ ├── gateway/ # WebSocket Gateway
-│ │ ├── src/
-│ │ │ ├── socket.ts
-│ │ │ ├── kafkaConsumer.ts
-│ │ │ └── server.ts
-│ │ └── Dockerfile
-│ │
-│ ├── game-service/ # Game logic engine
-│ │ ├── src/
-│ │ │ ├── controllers/
-│ │ │ ├── services/
-│ │ │ ├── models/
-│ │ │ ├── events/
-│ │ │ └── app.py
-│ │ └── Dockerfile
-│ │
-│ ├── replay-service/ # Event replay system
-│ │ ├── src/
-│ │ │ ├── consumer.py
-│ │ │ ├── replayer.py
-│ │ │ └── api.py
-│ │ └── Dockerfile
-│ │
-│ ├── ai-service/ # AI clue generator
-│ │ ├── src/
-│ │ │ ├── clue_engine.py
-│ │ │ ├── embeddings.py
-│ │ │ └── api.py
-│ │ └── Dockerfile
-│ │
-│ └── matchmaking-service/
-│ ├── src/
-│ │ ├── queue.py
-│ │ └── consumer.py
-│ └── Dockerfile
-│
+├── services/                   # Backend microservices
+│   ├── gateway/                # WebSocket Gateway
+│   │   ├── src/
+│   │   │   ├── socket.ts
+│   │   │   ├── kafkaConsumer.ts
+│   │   │   └── server.ts
+│   │   └── Dockerfile
+│   │
+│   ├── game-service/           # Game logic engine
+│   │   ├── src/
+│   │   │   ├── controllers/
+│   │   │   ├── services/
+│   │   │   ├── models/
+│   │   │   ├── events/
+│   │   │   └── app.py
+│   │   └── Dockerfile
+│   │
+│   ├── replay-service/         # Event replay system
+│   │   ├── src/
+│   │   │   ├── consumer.py
+│   │   │   ├── replayer.py
+│   │   │   └── api.py
+│   │   └── Dockerfile
+│   │
+│   ├── ai-service/             # AI clue generator
+│   │   ├── src/
+│   │   │   ├── clue_engine.py
+│   │   │   ├── embeddings.py
+│   │   │   └── api.py
+│   │   └── Dockerfile
+│   │
+│   └── matchmaking-service/
+│       ├── src/
+│       │   ├── queue.py
+│       │   └── consumer.py
+│       └── Dockerfile
 │
 ├── kafka/
-│ ├── topics.md # Kafka topic definitions
-│ └── init-topics.sh # Topic initialization script
+│   ├── topics.md
+│   └── init-topics.sh
 │
 ├── infra/
-│ ├── mongodb/
-│ ├── redis/
-│ └── monitoring/
-│ ├── prometheus.yml
-│ └── grafana/
+│   ├── mongodb/
+│   ├── redis/
+│   └── monitoring/
+│       ├── prometheus.yml
+│       └── grafana/
 │
 └── docs/
-├── architecture.md
-├── event-flow.md
-└── api-spec.md
+    ├── architecture.md
+    ├── event-flow.md
+    └── api-spec.md
+```
