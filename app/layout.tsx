@@ -38,6 +38,8 @@ export default function RootLayout({
           antialiased
         `}
       >
+        <div className="fixed inset-0 -z-10 bg-gradient-to-br from-sky-300 via-blue-300 to-cyan-200" />
+
         {children}
       </body>
     </html>
