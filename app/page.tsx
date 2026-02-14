@@ -1,7 +1,9 @@
+import Button1 from "./UI/Button1";
+
 export default function Home() {
   return (
     <div className="">
-      <h1>Hello</h1>
+      <Button1 />
     </div>
   );
 }
