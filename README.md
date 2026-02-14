@@ -1,3 +1,72 @@
+# 🕵️ SpyWords
+
+**SpyWords** is a real-time multiplayer word strategy game inspired by Codenames, built using an event-driven microservices architecture powered by Apache Kafka.
+
+Players compete in teams, decode clues, and avoid the assassin — all synchronized in real time through distributed event streaming.
+
+---
+
+# 🚀 Features
+
+- 🎮 Real-time multiplayer gameplay
+- 🕵️ Spymaster & Operative roles
+- 🧠 One-word clue system
+- 💀 Assassin card logic
+- 🔄 Event replay system
+- 👀 Spectator mode
+- 🤖 AI clue generator (optional)
+- 🏆 Ranked matchmaking (planned)
+
+---
+
+# 🧱 Tech Stack
+
+## Frontend
+
+- Next.js 14 (App Router)
+- React + TypeScript
+- Tailwind CSS
+- Socket.IO Client
+- Zustand / Redux Toolkit
+
+## Backend / Microservices
+
+| Service             | Tech                |
+| ------------------- | ------------------- |
+| WebSocket Gateway   | Node.js + Socket.IO |
+| Game Service        | Python (FastAPI)    |
+| Replay Service      | Python              |
+| AI Service          | Python              |
+| Matchmaking Service | Python              |
+
+---
+
+## Event Streaming
+
+- Apache Kafka
+- KafkaJS (Node client)
+- Confluent-Kafka (Python client)
+
+---
+
+## Databases & Cache
+
+- MongoDB → Game state storage
+- Redis → Presence, timers, caching
+- Kafka → Event storage / replay log
+
+---
+
+## DevOps / Infra
+
+- Docker + Docker Compose
+- Kubernetes (future scope)
+- Prometheus + Grafana monitoring
+
+---
+
+# 📂 Project Structure
+
 spywords/
 │
 ├── README.md
@@ -69,8 +138,8 @@ spywords/
 │
 │
 ├── kafka/
-│ ├── topics.md # Topic definitions
-│ └── init-topics.sh
+│ ├── topics.md # Kafka topic definitions
+│ └── init-topics.sh # Topic initialization script
 │
 ├── infra/
 │ ├── mongodb/
